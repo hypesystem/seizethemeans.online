@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Seize the Means</title>
+        <link href="https://fonts.googleapis.com/css?family=Bungee|Bungee+Inline|Homemade+Apple|Press+Start+2P|Slackey" rel="stylesheet"> 
+        <style type="text/css">
+            body {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                font-family: sans-serif;
+                background: black;
+                color: red;
+            }
+            div {
+                display: inline-block;
+                padding-bottom: 75px;
+            }
+            span {
+                display: block;
+                text-align: center;
+            }
+            .one {
+                font-size: 5em;
+                font-family: 'Bungee Inline';
+                margin-bottom: -0.7em;
+            }
+            .two {
+                font-size: 2em;
+                font-family: 'Bungee';
+            }
+            .three {
+                font-size: 2.8em;
+                font-family: 'Press Start 2P', monospace;
+                color: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <span class="one">Seize the Means</span>
+            <span class="two">of</span>
+            <span class="three"></span>
+        </div>
+        <script>
+            var whatToSeize = pickRandom([
+                "programming",
+                "debugging",
+                "test-driven development",
+                "quality assurance",
+                "constructing hashmaps",
+                "asymmetric encryption",
+                "version control",
+                "asymptotic runtime analysis",
+                "parsing markdown",
+                "making pull requests",
+                "continuous integration",
+                "proving NP-hardness",
+                "prime factorization",
+                "elliptic curve<br>point multiplication",
+                "coffee consumption",
+                "iterative development",
+                "cycle detection",
+                "memory management",
+                "preventing stack overflows",
+                "process scheduling",
+                "defining user stories",
+                "pair programming",
+                "estimation",
+                "ux design",
+                "deploying containers",
+                "pushing to master",
+                "hosting",
+                "hardening"
+            ]);
+            var whereToShowTheSeized = document.querySelector(".three");
+            whereToShowTheSeized.innerHTML = whatToSeize;
+
+            function pickRandom(arr) {
+                var r = Math.round(Math.random() * (arr.length - 1));
+                return arr[r];
+            }
+        </script>
+    </body>
+</html>
