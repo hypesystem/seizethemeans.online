@@ -45,6 +45,7 @@
                 font-size: 2.8em;
                 font-family: 'Press Start 2P', monospace;
                 color: #fcbc28;
+                cursor: pointer;
             }
         </style>
     </head>
@@ -55,7 +56,7 @@
             <span class="three"></span>
         </div>
         <script>
-            var whatToSeize = pickRandom([
+            var seizables = [
                 "programming",
                 "debugging",
                 "test-driven development",
@@ -104,14 +105,21 @@
                 "search engine optimization",
                 "mining data",
                 "using content management systems"
-            ]);
+            ];
             var whereToShowTheSeized = document.querySelector(".three");
-            whereToShowTheSeized.innerHTML = whatToSeize;
 
             function pickRandom(arr) {
                 var r = Math.round(Math.random() * (arr.length - 1));
                 return arr[r];
             }
+
+            function revolutionize() {
+                var whatToSeize = pickRandom(seizables);
+                whereToShowTheSeized.innerHTML = whatToSeize;
+            }
+
+            whereToShowTheSeized.addEventListener("click", revolutionize);
+            revolutionize();
         </script>
     </body>
 </html>
